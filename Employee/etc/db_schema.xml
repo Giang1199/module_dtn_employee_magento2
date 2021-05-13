@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dtn_office_employee_entity" resource="default" engine="innodb" comment="Dtn Employee Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="department_id" padding="10" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Attribute Set ID"/>
+        <column xsi:type="text" name="email" comment="Email"/>
+        <column xsi:type="text" name="first_name" comment="First name"/>
+        <column xsi:type="text" name="last_name" comment="Last name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+    <table name="dtn_office_employee_entity_decimal" resource="default" engine="innodb" comment="Dtn Employee Decimal Table">
+        <column xsi:type="int" name="value_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Value ID"/>
+        <column xsi:type="smallint" name="attribute_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Attribute ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Stores ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false"
+                identity="false" default="0"  comment="Entity Id"/>
+        <column xsi:type="decimal" name="value" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="value_id"/>
+        </constraint>
+        <index indexType="btree" referenceId="store_index">
+            <column name="store_id"/>
+        </index>
+        <index indexType="btree" referenceId="attribute_index">
+            <column name="attribute_id"/>
+        </index>
+        <index indexType="btree" referenceId="attri_store_entity">
+            <column name="attribute_id"/>
+            <column name="store_id"/>
+            <column name="entity_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="attribute_id_fk"
+                    table="dtn_office_employee_entity_decimal" column="attribute_id" referenceTable="eav_attribute"
+                    referenceColumn="attribute_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="entity_id_fk" table="dtn_office_employee_entity_decimal" column="entity_id" referenceTable="dtn_office_employee_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="store_id_fk" table="dtn_office_employee_entity_decimal" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+    <table name="dtn_office_employee_entity_datetime" resource="default" engine="innodb" comment="Dtn Employee Datetime Table">
+        <column xsi:type="int" name="value_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Value ID"/>
+        <column xsi:type="smallint" name="attribute_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Attribute ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Stores ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false"
+                identity="false" default="0"  comment="Entity Id"/>
+        <column xsi:type="datetime" name="value" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="value_id"/>
+        </constraint>
+        <index indexType="btree" referenceId="store_index">
+            <column name="store_id"/>
+        </index>
+        <index indexType="btree" referenceId="attribute_index">
+            <column name="attribute_id"/>
+        </index>
+        <index indexType="btree" referenceId="attri_store_entity">
+            <column name="attribute_id"/>
+            <column name="store_id"/>
+            <column name="entity_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="attribute_id_fk"
+                    table="dtn_office_employee_entity_datetime" column="attribute_id" referenceTable="eav_attribute"
+                    referenceColumn="attribute_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="entity_id_fk" table="dtn_office_employee_entity_datetime" column="entity_id" referenceTable="dtn_office_employee_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="store_id_fk" table="dtn_office_employee_entity_datetime" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+
+    <table name="dtn_office_employee_entity_int" resource="default" engine="innodb" comment="Dtn Employee Int Table">
+        <column xsi:type="int" name="value_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Value ID"/>
+        <column xsi:type="smallint" name="attribute_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Attribute ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Stores ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false"
+                identity="false" default="0"  comment="Entity Id"/>
+        <column xsi:type="int" name="value" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="value_id"/>
+        </constraint>
+        <index indexType="btree" referenceId="store_index">
+            <column name="store_id"/>
+        </index>
+        <index indexType="btree" referenceId="attribute_index">
+            <column name="attribute_id"/>
+        </index>
+        <index indexType="btree" referenceId="attri_store_entity">
+            <column name="attribute_id"/>
+            <column name="store_id"/>
+            <column name="entity_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="attribute_id_fk"
+                    table="dtn_office_employee_entity_int" column="attribute_id" referenceTable="eav_attribute"
+                    referenceColumn="attribute_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="entity_id_fk" table="dtn_office_employee_entity_int" column="entity_id" referenceTable="dtn_office_employee_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="store_id_fk" table="dtn_office_employee_entity_int" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+
+    <table name="dtn_office_employee_entity_text" resource="default" engine="innodb" comment="Dtn Employee Text Table">
+        <column xsi:type="int" name="value_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Value ID"/>
+        <column xsi:type="smallint" name="attribute_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Attribute ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false"
+                identity="false" default="0" comment="Stores ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false"
+                identity="false" default="0"  comment="Entity Id"/>
+        <column xsi:type="text" name="value" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="value_id"/>
+        </constraint>
+        <index indexType="btree" referenceId="store_index">
+            <column name="store_id"/>
+        </index>
+        <index indexType="btree" referenceId="attribute_index">
+            <column name="attribute_id"/>
+        </index>
+        <index indexType="btree" referenceId="attri_store_entity">
+            <column name="attribute_id"/>
+            <column name="store_id"/>
+            <column name="entity_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="attribute_id_fk"
+                    table="dtn_office_employee_entity_text" column="attribute_id" referenceTable="eav_attribute"
+                    referenceColumn="attribute_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="entity_id_fk" table="dtn_office_employee_entity_text" column="entity_id" referenceTable="dtn_office_employee_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="store_id_fk" table="dtn_office_employee_entity_text" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+</schema>

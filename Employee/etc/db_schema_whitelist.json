@@ -1,0 +1,34 @@
+{
+    "dtn_office_employee_entity": {
+        "column": {
+            "entity_id": true,
+            "department_id": true,
+            "email": true,
+            "first_name": true,
+            "last_name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "dtn_office_employee_entity_decimal": {
+        "column": {
+            "value_id": true,
+            "attribute_id": true,
+            "store_id": true,
+            "entity_id": true,
+            "value": true
+        },
+        "index": {
+            "DTN_OFFICE_EMPLOYEE_ENTITY_DECIMAL_STORE_ID": true,
+            "DTN_OFFICE_EMPLOYEE_ENTITY_DECIMAL_ATTRIBUTE_ID": true,
+            "DTN_OFFICE_EMPLOYEE_ENTT_DEC_ATTR_ID_STORE_ID_ENTT_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "DTN_OFFICE_EMPLOYEE_ENTT_DEC_ATTR_ID_EAV_ATTR_ATTR_ID": true,
+            "FK_D341B1C246AEA7547B17DB1E80E71702": true,
+            "DTN_OFFICE_EMPLOYEE_ENTITY_DECIMAL_STORE_ID_STORE_STORE_ID": true
+        }
+    }
+}

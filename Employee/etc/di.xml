@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Dtn\Employee\Controller\Index\Example">
+        <plugin name="Example_Plugin" type="Dtn\Employee\Plugin\ExamplePlugin" sortOrder="10" disabled="false"  />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dtn_employee_listing_data_source" xsi:type="string">dtn_employee_collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="dtn_employee_collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">dtn_office_employee_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Dtn\Employee\Model\ResourceModel\Employee</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @var \Dtn\Employee\Block\ShowData $block
+ */
+?>
+<?php
+
+$collection = $block->getCollection();
+
+?>
+<table>
+    <tr>
+        <th scope="col" class="col id"><?php echo __('Entity ID') ?></th>
+        <th scope="col" class="col department_id"><?php echo __('Department Id') ?></th>
+        <th scope="col" class="col email"><?php echo __('Email') ?></th>
+        <th scope="col" class="col fname"><?php echo __('First Name') ?></th>
+        <th scope="col" class="col lname"><?php echo __('Last Name') ?></th>
+<!--        <th scope="col" class="col dob">--><?php //echo __('Date Of B') ?><!--</th>-->
+<!--        <th scope="col" class="col working_years">--><?php //echo __('Working Years') ?><!--</th>-->
+<!--        <th scope="col" class="col salary">--><?php //echo __('Salary') ?><!--</th>-->
+<!--        <th scope="col" class="col note">--><?php //echo __('Note') ?><!--</th>-->
+    </tr>
+    <?php
+    foreach ($collection as $item){
+    ?>
+    <tr>
+        <td><?php echo $item->getData('entity_id'); ?></td>
+        <td><?php echo $item->getData('department_id'); ?></td>
+        <td><?php echo $item->getData('email'); ?></td>
+        <td><?php echo $item->getData('first_name'); ?></td>
+        <td><?php echo $item->getData('last_name'); ?></td>
+<!--        <td>--><?php //echo $item->getData('dob'); ?><!--</td>-->
+<!--        <td>--><?php //echo $item->getData('working_years'); ?><!--</td>-->
+<!--        <td>--><?php //echo $item->getData('salary'); ?><!--</td>-->
+<!--        <td>--><?php //echo $item->getData('note'); ?><!--</td>-->
+    </tr>
+</table>
+<?php
+}

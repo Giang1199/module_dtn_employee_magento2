@@ -1,0 +1,32 @@
+<style>
+    * {
+        line-height: 35px;
+    }
+</style>
+<form action="<?php echo $block->getFormAction() ?>">
+    <label for="first_name">First Name *</label>
+    <input type="text" id="first_name" name="first_name" required="true">
+
+    <label for="last_name">Last Name *</label>
+    <input type="text" id="first_name" name="last_name" required="true">
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required="true">
+
+    <label for="department_id">Department Id</label>
+    <input type="number" id="department_id" name="department_id">
+
+    <label for="working_years">Working Years *</label>
+    <input type="number" id="working_years" name="working_years" required="true">
+
+    <label for="dob">Date Of B *</label>
+    <input type="date" id="dob" name="dob" required="true">
+
+    <label for="salary">Salary *</label>
+    <input type="number" id="salary" name="salary" required="true">
+
+    <label for="note">Note</label>
+    <input type="text" id="note" name="note">
+
+    <button type="submit">Submit</button>
+</form>
